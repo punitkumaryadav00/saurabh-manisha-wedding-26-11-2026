@@ -1,0 +1,115 @@
+@import "tailwindcss";
+
+:root {
+  --bg-ivory: #f8f2e8;
+  --bg-ivory-deep: #efe4d3;
+  --ink-brown: #422c24;
+  --ink-muted: #785f54;
+  --burgundy: #6e1820;
+  --burgundy-dark: #4b1015;
+  --gold: #c69c5b;
+  --gold-light: #ebcb96;
+  --envelope-dark: #38120f;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background-color: var(--bg-ivory);
+  color: var(--ink-brown);
+  font-family: var(--font-serif), Georgia, serif;
+  overflow-x: hidden;
+  /* Subtle warm parchment grain */
+  background-image:
+    radial-gradient(rgba(160, 125, 90, 0.08) 1px, transparent 0),
+    radial-gradient(rgba(110, 24, 32, 0.03) 1px, transparent 0);
+  background-size: 32px 32px;
+  background-position: 0 0, 16px 16px;
+}
+
+.font-script {
+  font-family: var(--font-script), cursive;
+}
+
+.font-serif-royal {
+  font-family: var(--font-serif), Georgia, serif;
+}
+
+.font-devanagari {
+  font-family: var(--font-devanagari), var(--font-serif), serif;
+}
+
+/* Embossed Chocolate-Burgundy Envelope Texture */
+.envelope-leather {
+  background-color: #361210;
+  background-image:
+    radial-gradient(circle at 50% 45%, rgba(110, 42, 32, 0.45) 0%, rgba(36, 9, 8, 0.92) 75%),
+    repeating-linear-gradient(45deg, rgba(255, 215, 160, 0.02) 0px, rgba(255, 215, 160, 0.02) 1px, transparent 1px, transparent 6px),
+    repeating-linear-gradient(-45deg, rgba(0, 0, 0, 0.14) 0px, rgba(0, 0, 0, 0.14) 1px, transparent 1px, transparent 6px);
+}
+
+/* Wax Seal 3D Embossed Effect */
+.wax-seal-peach {
+  background: radial-gradient(circle at 35% 30%, #fff0dc 0%, #f3cca7 38%, #d6986d 78%, #a66945 100%);
+  box-shadow:
+    0 12px 28px rgba(0, 0, 0, 0.55),
+    inset 0 2px 6px rgba(255, 255, 255, 0.75),
+    inset 0 -4px 10px rgba(120, 62, 30, 0.65);
+}
+
+.wax-seal-burgundy {
+  background: radial-gradient(circle at 35% 30%, #a8333f 0%, #7d1924 45%, #550e16 82%, #38070c 100%);
+  box-shadow:
+    0 10px 24px rgba(75, 16, 21, 0.42),
+    inset 0 2px 5px rgba(255, 200, 200, 0.35),
+    inset 0 -4px 8px rgba(30, 3, 7, 0.75);
+}
+
+/* Sunburst Light Explosion when opening envelope */
+@keyframes goldenBurst {
+  0% {
+    opacity: 0;
+    transform: scale(0.2);
+  }
+  45% {
+    opacity: 1;
+    transform: scale(1.25);
+  }
+  100% {
+    opacity: 0;
+    transform: scale(2.4);
+  }
+}
+
+.animate-golden-burst {
+  animation: goldenBurst 1.6s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+}
+
+@keyframes gentleFloat {
+  0%, 100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-6px);
+  }
+}
+
+.animate-gentle-float {
+  animation: gentleFloat 2.8s ease-in-out infinite;
+}
+
+@keyframes shimmerGold {
+  0%, 100% {
+    filter: drop-shadow(0 0 6px rgba(235, 203, 150, 0.35));
+  }
+  50% {
+    filter: drop-shadow(0 0 18px rgba(255, 224, 160, 0.8));
+  }
+}
+
+.animate-shimmer-gold {
+  animation: shimmerGold 2.6s ease-in-out infinite;
+}
+
